@@ -1,6 +1,4 @@
-package jpabook.jpashop;
-
-import org.hibernate.annotations.Fetch;
+package jpabook.jpashop.domain;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
