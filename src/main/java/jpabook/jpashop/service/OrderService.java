@@ -14,9 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class OrderService {
 
-    private OrderRepository orderRepository;
-    private MemberRepository memberRepository;
-    private ItemRepository itemRepository;
+    private final OrderRepository orderRepository;
+    private final MemberRepository memberRepository;
+    private final ItemRepository itemRepository;
 
     /*주문*/
     @Transactional
@@ -39,6 +39,13 @@ public class OrderService {
         // 주문 저장
         orderRepository.save(order);
         return order.getId();
-
+    }
+    /*주문 취소*/
+    @Transactional
+    public void cancelOrder(Long orderId){
+        // 주문 엔티티 조회
+        Order order = orderRepository.findOne(orderId);
+        // 주문 취소
+        order.cancel();
     }
 }
