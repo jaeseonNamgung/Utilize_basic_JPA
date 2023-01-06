@@ -1,7 +1,7 @@
 package jpabook.jpashop.domain.item;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("B")
 @Getter @Setter
+@SuperBuilder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Book extends Item{
 
     private String author;
