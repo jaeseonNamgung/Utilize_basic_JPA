@@ -5,8 +5,8 @@ import lombok.*;
 
 @Getter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class BookForm {
 
     private Long id;
@@ -15,6 +15,16 @@ public class BookForm {
     private int stockQuantity;
     private String author;
     private String isbn;
+
+    @Builder
+    public BookForm(Long id, String name, int price, int stockQuantity, String author, String isbn) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+        this.author = author;
+        this.isbn = isbn;
+    }
 
     public static BookForm from(Book book){
             return BookForm.builder()
@@ -37,4 +47,5 @@ public class BookForm {
                 .isbn(this.getIsbn())
                 .build();
     }
+
 }
