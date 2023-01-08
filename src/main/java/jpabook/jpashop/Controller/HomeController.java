@@ -1,4 +1,4 @@
-package jpabook.jpashop.web;
+package jpabook.jpashop.Controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
