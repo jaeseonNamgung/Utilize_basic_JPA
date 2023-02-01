@@ -30,6 +30,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 //	p6spy란 쿼리 파라미터를 로그에 남겨주고 추가적인 기능을 제공하는 외부 라이브러리
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
 
 }
 

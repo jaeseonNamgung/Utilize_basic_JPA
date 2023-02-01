@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("B")
 @Getter @Setter
 @SuperBuilder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Book extends Item{
 
