@@ -20,7 +20,7 @@ public class OrderQueryRepository {
                 o -> {
                     List<OrderItemQueryDto> orderItems =
                             findOrderItems(o.getOrderId());
-                    o.or(orderItems);
+                    o.setOrderQueryDtos(orderItems);
                 }
         );
 

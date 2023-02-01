@@ -39,7 +39,7 @@ public class OrderApiController {
     }
     @GetMapping("/api/v3/orders")
     public List<OrderDto> ordersV3(){
-        List<Order> all = orderRepository.findAllWithItem(new OrderSearch());
+        List<Order> all = orderRepository.findAllWithMemberDelivery(new OrderSearch());
         System.out.println("Order Size: " + all.size());
         all.forEach(o->{
             System.out.println("Member Name: " + o.getMember().getName() + " |Order Id: " + o.getId());
